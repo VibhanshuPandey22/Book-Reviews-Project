@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <title>New Review</title>
+</head>
+<body> 
+    <header>
+        <h1 style="line-height: 1em; margin-bottom: 7%; text-align: center;">NEW REVIEW</h1>
+    </header>
+
+    <main> 
+        <div style="display: flex;">
+            <form action="/new" method="post">
+                <input style="width: 100%; height: 20%; margin-bottom: 3%;" type="text" name="bookName" placeholder="Book's Name" autocomplete="off" id="bookNameInput" required>
+                <input style="width: 100%; height: 20%; margin-bottom: 3%;" type="text" name="authorName" placeholder="Author's Name" autocomplete="off" id="authorNameInput" required>
+                <input style="width: 100%; height: 20%; margin-bottom: 3%;" type="number" name="rating" placeholder= "<%= locals.error ? error : 'Rating out of 10'%>" autocomplete="off" id="ratingInput" required>
+                <input style="width: 100%; height: 20%; margin-bottom: 3%;" type="text" name="summary" placeholder="Book's summary" autocomplete="off" id="summaryInput" required>
+                <input style="width: 100%; height: 20%; margin-bottom: 3%;" type="text" name="notes" placeholder="Review" autocomplete="off" id="notesInput" required>
+                <input style="width: 100%; height: 20%; margin-bottom: 3%;" type="text" name="isbnNumber" placeholder="Book's ISBN number" autocomplete="off" id="isbnInput" required>
+
+                <div style="display: flex; justify-content: center; "><button class="button" style="color: aliceblue;" type="submit"><span class="color-1">Add Review</span></button></div>
+             </form>
+        </div>
+    </main>
+</body>
+</html>

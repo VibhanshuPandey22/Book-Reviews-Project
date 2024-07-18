@@ -1,0 +1,88 @@
+body{
+    max-width: 40em;
+    margin: 0 auto;
+    padding: 5px;
+    font-family: Georgia, serif;
+    font-size: 20px;
+    line-height: 30px;
+    color:  rgb(209, 229, 237);
+    background-color: #0c0c0c;
+}
+
+.book-cover{
+    float: left;
+    margin-right: 3%;
+    height: 200px;
+}
+
+.button{
+    padding: 0;
+    margin: 0;
+    border: none;
+    outline: none;
+    background: none;
+    color: rgb(164, 158, 158);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+#review-button{
+    color: #88f;
+}
+
+.sort-by{
+    display: inline-block;
+    color: #94b1e6;
+    text-decoration: none;
+}
+
+.footer-API-link{
+    text-decoration: none;
+    cursor: pointer;
+    color: rgb(181, 180, 180);
+}
+
+.sort-by:hover{
+    color: #e7d31f;
+    transition: 0.3s ease;
+}
+
+.sort-by:not(:hover){ 
+    transition: 0.3s ease;
+}
+
+.color-1:hover{
+    color: #e7d31f;
+    transition: 0.3s ease;
+}
+.color-1:not(:hover){ 
+    transition: 0.3s ease;
+}
+
+.color-2:hover{
+    color: #ed0505;
+    transition: 0.3s ease;
+}
+.color-2:not(:hover){ 
+    transition: 0.3s ease;
+}
+.color-3{
+    display: inline-block;
+}
+
+.color-3:hover{
+    color: #e7e5e5;
+    transition: 0.3s ease;
+    transform: scale(1.02);
+}
+.color-3:not(:hover){ 
+    transition: 0.3s ease;
+}
+
+
+
+
+
+
+

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <title>Review</title>
+</head>
+<body>
+    <header>
+        <h1 style="line-height: 1em;"><a style="text-decoration: none; color: rgb(209, 229, 237);" href="/"><span class="color-1">BOOK REVIEWS </span></a></h1>
+        <h1 style="line-height: 1em; margin-bottom: 7%;">BY <span style="color: rgb(162, 162, 232);">VIBHANSHU PANDEY</span></h1>
+    </header>
+    <hr>
+    <br>
+    <main>  
+        <div>
+                <div id="<%= id %>" class="a-book" style="margin-bottom: 10%; margin-top: 7%;">
+                    <img class="book-cover" src="<%= url %>/isbn/<%= isbn %>-M.jpg" alt="book-cover">
+                    <h3><%= bookName %> by <%= authorName %></h3>
+                    <p style="color: rgb(155, 155, 155);"><small>Rating : <%= rating %>/10</small></p>
+                    <p><%= summary %></p>
+                    <h3 style="color: #94b1e6;; margin-top: 7%;">Review: </h3>
+                    <p><%= notes %></p>
+                    <br>
+                    <div style="display: flex; justify-content: center;">
+                    <p style="margin: 0;"> <strong><a style="color: #88f;" class="footer-API-link" href="/"><span class="color-1">BACK TO HOME</span></a></strong></p>
+                    </div>
+                </div>
+        </div>
+
+        <hr>
+
+    </main>
+
+<%- include("partials/footer.ejs") %>

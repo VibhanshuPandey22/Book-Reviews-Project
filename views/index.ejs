@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <title>Books</title>
+</head>
+<body>
+    <header>
+        <h1 style="line-height: 1em;"><a style="text-decoration: none; color: rgb(209, 229, 237);" href="/"><span class="color-1">BOOK REVIEWS </span></a></h1>
+        <h1 style="line-height: 1em; margin-bottom: 7%;">BY <span style="color: rgb(162, 162, 232);">VIBHANSHU PANDEY</span></h1>
+        <h3>This website holds the functionality to read, sort, add, edit and delete book reviews. The book images are loaded by integrating the <a style="color: #88f; text-decoration: none;" href="https://openlibrary.org/dev/docs/api/covers"><span  class="color-1">Open Library Covers API</span></a> using the ISBN Number of the book. In case of an invalid entry of the ISBN Number, a blank image loads up.</h3>
+    </header>
+
+    <main>  
+        <p>Sort by <a class="sort-by" href="/sortByBest"><strong>best</strong></a> or <a class="sort-by" href="/sortByTitle"><strong>title</strong></a></p>
+        <p>Write a <a style="color:  #88f; text-decoration: none;" href="/new"><strong class="color-1" >new review</strong></a></p>
+
+        <hr>
+        <br>
+        
+        <div>
+            <% books.forEach((book) => { %>
+                <div id="<%= book.id %>" class="a-book" style="margin-bottom: 10%; margin-top: 7%;">
+                    <img class="book-cover" src= "<%= url %>/isbn/<%= book.isbn_number %>-M.jpg" alt="book-cover">
+                    <h2><%= book.name %> by <%= book.author %></h2>
+                    <p style="color: rgb(155, 155, 155)"><small>Rating : <%= book.rating %>/10</small></p>
+                    <p><%= book.summary %></p>
+                    <form style="margin-bottom:3%;" action="/bookReview" method="post"><p><button type="submit" name="reviewId" value="<%= book.id %>" class="button" id="review-button"><strong class="color-1">Read review</strong></button> for this book.</p></form>
+                        <form style="margin-bottom: 0.5%;" action="/editReview" method="post">
+                            <button style="color: #94b1e6;" class="button" name="editId" value="<%= book.id %>" type="submit"><strong class="color-1">Edit</strong></button>
+                        </form>
+                        <form action="/delete" method="post">
+                            <button style="color: #94b1e6;" class="button" name="deleteId" value="<%= book.id %>" type="submit"><strong class="color-2">Delete</strong></button>
+                        </form>
+                </div> 
+            <% }) %>    
+        </div>
+
+        <hr>
+
+    </main>
+
+<%- include("partials/footer.ejs") %>
