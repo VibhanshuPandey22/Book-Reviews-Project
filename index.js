@@ -2,17 +2,19 @@ import express from "express";
 import bodyParser from "body-parser";
 import pg from "pg";
 import axios from "axios";
+import env from "dotenv";
 
 const port = 3000;
 const app = express();
 const API_URL = "https://covers.openlibrary.org/b";
+env.config();
 
 const db = new pg.Client({
-    user: "postgres",
-    host: "localhost",
-    database: "bookReviewsProject",
-    password: "postgresAkVkSkPk*2207#",
-    port: 5432,
+    user: process.env.PG_USER,
+    host: process.env.PG_HOST,
+    database: process.env.PG_DATABASE,
+    password: process.env.PG_PASSWORD,
+    port: process.env.PG_PORT,
   });
 db.connect();
 
@@ -28,13 +30,6 @@ db.connect();
 //   rating: 10
 //  },
 // ];
-
-
-// try{
-
-// }catch(err){
-//   console.log(err);
-// }
 
 
 app.use(express.static("public"));
